@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * 生成结果
  */
-public class Package {
+public class Pack {
 
     /**
      * Ban Duplicate

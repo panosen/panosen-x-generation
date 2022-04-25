@@ -7,26 +7,26 @@ import org.junit.Test;
 import java.util.List;
 import java.util.Map;
 
-public class PackageTest {
+public class PackTest {
 
     @Test
     public void test() {
 
-        Package p = new Package();
+        Pack pack = new Pack();
 
-        p.add("a", "a1");
-        p.add("a", "a2", Charsets.UTF_8);
-        p.add("b", new byte[3]);
-        p.add("b", new byte[4]);
+        pack.add("a", "a1");
+        pack.add("a", "a2", Charsets.UTF_8);
+        pack.add("b", new byte[3]);
+        pack.add("b", new byte[4]);
 
-        Assert.assertEquals(4, p.getFileBaseList().size());
+        Assert.assertEquals(4, pack.getFileBaseList().size());
 
-        Map<String, Integer> fileContentMap = p.getFileContentMap();
+        Map<String, Integer> fileContentMap = pack.getFileContentMap();
         Assert.assertEquals(2, fileContentMap.size());
         Assert.assertEquals(2, (int) fileContentMap.get("a"));
         Assert.assertEquals(2, (int) fileContentMap.get("b"));
 
-        List<FileBase> fileBaseList = p.getFileBaseList();
+        List<FileBase> fileBaseList = pack.getFileBaseList();
         Assert.assertEquals(4, fileBaseList.size());
 
         Assert.assertEquals("a1", ((PlainFile) fileBaseList.get(0)).getContent());
